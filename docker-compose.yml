@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mlops-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mlops_flask_service
+    ports:
+      - "5001:5001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    restart: unless-stopped
+
